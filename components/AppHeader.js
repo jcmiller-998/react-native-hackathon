@@ -6,13 +6,13 @@ import swooshImage from "../assets/swoosh.png";
 const AppHeader = () => (
     <View styles={styles.header}>
         <Header>
-            <Left />
-            <Body>
-                <Title>
-                    Nike Commute
+            <Left style={{ flex: 0 }}/>
+            <Body style={{ flex: 1 }}>
+                <Title style={{ fontFamily: "Futura-CondensedExtraBold", fontSize: 24 }}>
+                    NIKE COMMUTE
                 </Title>
             </Body>
-            <Right />
+            <Right style={{ flex: 0 }}/>
         </Header>
     </View>
 );
