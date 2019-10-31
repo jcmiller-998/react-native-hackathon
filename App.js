@@ -9,7 +9,6 @@ import * as Font from "expo-font";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function App() {
-
     const alert = () => {
         Alert.alert(
             'ALERT!!!',
