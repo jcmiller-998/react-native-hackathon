@@ -30,6 +30,18 @@ const Home = ({ navigation }) => {
             <Content padder>
                 <View style={styles.subHeader}>
                     <Image style={styles.swooshIcon} source={swooshImage} />
+                    <Button
+                        style = {styles.loginButton}
+                        onPress={() => {
+                            navigation.navigate('CreateAccount' 
+                            )
+                        }}
+                        >
+                        <Text style={styles.loginText}>
+                            {`Login`}
+                        </Text>
+                    </Button>
+
                 </View>
                 <Image style={styles.transportPhoto} source={nikeTransport} />
                 <View style={styles.container}>
@@ -137,6 +149,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#FA5400",
         width: "40%"
     },
+    loginButton: {
+        justifyContent: "center",
+        marginBottom: 24,
+        backgroundColor: "#FA5400",
+        width: "18%"
+    },
     subHeader: {
         flexDirection: "row",
         justifyContent: "space-between",
@@ -160,6 +178,11 @@ const styles = StyleSheet.create({
         color: "#111",
         fontFamily: "Helvetica Neue",
         fontSize: 18
+    },
+    loginText: { 
+        color: "#111",
+        fontFamily: "Helvetica Neue",
+        fontSize: 14
     },
     message: {
         marginTop: 30,
