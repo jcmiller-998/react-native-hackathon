@@ -1,10 +1,9 @@
 import React from 'react';
 import MapView from 'react-native-maps';
 
-const viewOfMap = () => (
+const ViewOfMap = () => (
     <MapView        
-        style={{flex: 1}}
-        annotations={markers}        
+        style={{flex: 1}} 
         region={{ 
             latitude: 45.5312571, 
             longitude: -122.75,
@@ -34,4 +33,4 @@ const viewOfMap = () => (
     </MapView>
 );
 
-export default viewOfMap;
+export default ViewOfMap;
