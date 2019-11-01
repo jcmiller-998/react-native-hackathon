@@ -11,7 +11,7 @@ const App = () => {
 
     const getFonts = () => {
         Font.loadAsync({
-            Roboto: require('native-base/Fonts/Roboto.ttf'),
+            'Nike_Futura': require("@nike/ncss/dist/3.1/dotcom/fonts/3de3fe6a-5eb5-46c0-b860-817dac7636b1.ttf"),
             Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
             ...Ionicons.font,
         });

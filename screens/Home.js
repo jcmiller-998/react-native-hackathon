@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, Image, Alert } from 'react-native';
 import { Container, Content, Text, Button } from "native-base";
-import AppHeader from "../components/AppHeader";
 import swooshImage from "../assets/swoosh.png";
 import nikeTransport from "../assets/nikeTransportation.png"
 
@@ -28,7 +27,6 @@ const Home = ({ navigation }) => {
 
     return (
         <Container>
-            <AppHeader />
             <Content padder>
                 <View style={styles.subHeader}>
                     <Image style={styles.swooshIcon} source={swooshImage} />
@@ -79,6 +77,18 @@ const Home = ({ navigation }) => {
         </Container>
     );
 }
+
+Home.navigationOptions = {
+    headerTitle: 'NIKE COMMUTE',
+    headerStyle: {
+        backgroundColor: "#F5F5F5"
+    },
+    headerTitleStyle: {
+        fontFamily: "Futura-CondensedExtraBold", 
+        fontSize: 24,
+        fontWeight: 800
+    }
+};
 
 const styles = StyleSheet.create({
     container: {
