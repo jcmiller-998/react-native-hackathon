@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Image, Alert } from 'react-native';
+import { StyleSheet, View, TextInput, Image } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 import { Container, Content, Text, Button } from "native-base";
 import swooshImage from "../assets/swoosh.png";
 import nikeTransport from "../assets/nikeTransportation.png"
@@ -8,23 +9,6 @@ const Home = ({ navigation }) => {
 
     const [inputValue, setInputValue] = useState("Enter Your Destination...");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    // const alert = () => {
-    //     Alert.alert(
-    //         'ALERT!!!',
-    //         'This alert does nothing',
-    //         [
-    //             {
-    //                 text: 'OK',
-    //                 onPress: () => console.log('user hit ok'),
-    //             },
-    //             {
-    //                 text: 'Cancel',
-    //                 onPress: () => console.log('user hit cancel'),
-    //             }
-    //         ]
-    //     )
-    // }
 
     return (
         <Container>
@@ -50,26 +34,37 @@ const Home = ({ navigation }) => {
                 </View>
                 <Image style={styles.transportPhoto} source={nikeTransport} />
                 <View style={styles.container}>
-                    <TextInput
-                        value={inputValue}
-                        style={styles.input}
-                        onChangeText={text => setInputValue(text)}
+                    <RNPickerSelect
+                        placeholder={{
+                            label: 'Select a Destination...',
+                        }}
+                        style={{
+                            placeholder: {
+                                borderColor: "black",
+                                borderWidth: 0.5,
+                                width: "100%",
+                                padding: 10,
+                                fontFamily: "Helvetica Neue",
+                                fontSize: 20,
+                                color: 'black',
+                                borderColor: "#CCCCCC",
+                                textAlign: "center"
+                            }
+                        }}
+                        onValueChange={(value) => setInputValue(value)}
+                        items={[
+                            { label: "Nike WHQ", value: "whq" },
+                            { label: "Downtown Portland", value: "portland" },
+                            { label: "Beaverton", value: "beaverton"}
+                        ]}
                     />
                 </View>
                 <View style={styles.buttonContainer}>
-                    {/* <Button
-                        style={styles.button}
-                        onPress={() => setInputValue("Button Text")}
-                    >
-                        <Text style={styles.buttonText}>
-                            {`Offer a ride`}
-                        </Text>
-                    </Button> */}
                     <Button
                         style={styles.button}
                         onPress={() => {
                             navigation.navigate('Navigation', {
-                                id: '123'
+                                inputValue: inputValue
                             })
                         }}
                     >
@@ -117,11 +112,10 @@ Home.navigationOptions = {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
-        padding: 20
+        padding: 20,
+        margin: 30,
     },
     input: {
         height: 40,
@@ -130,7 +124,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         padding: 5,
         fontFamily: "Helvetica Neue",
-        fontSize: 18
+        fontSize: 36
     },
     swooshIcon: {
         marginTop: 10,

@@ -26,8 +26,6 @@ class Navigation extends Component {
     componentDidMount() {
       navigator.geolocation.getCurrentPosition(
          (position) => {
-           console.log("wokeeey");
-           console.log(position);
            this.setState({
              latitude: position.coords.latitude,
              longitude: position.coords.longitude,
@@ -39,27 +37,34 @@ class Navigation extends Component {
        );
      }
   
+    
   
     render() {
       return ( 
        // <View>
        this.state.latitude && this.state.longitude ?
             <MapView        
-        style={{flex: 1}} 
-        region={{ 
-            latitude: 45.5312571, 
-            longitude: -122.75,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.25        
-        }} 
-        showsUserLocation={true}
-    >
-            <MapView.Marker
-                coordinate={{latitude: this.state.latitude,
-                longitude: this.state.longitude}}
-                title={'Nike HQ'}
-                description={'Workplace'} 
-            />
+              style={{flex: 1}} 
+              region={{ 
+                  latitude: 45.5312571, 
+                  longitude: -122.75,
+                  latitudeDelta: 0.0922,
+                  longitudeDelta: 0.25        
+              }} 
+              showsUserLocation={true}
+            >
+              <MapView.Marker
+                  coordinate={{latitude: this.state.latitude,
+                  longitude: this.state.longitude}}
+                  title={'Nike HQ'}
+                  description={'Workplace'} 
+              />
+              <MapView.Marker
+                coordinate={{latitude: 45.5227363,
+                longitude: -122.6780575}}
+                title={'Downtown Portland'}
+                description={'Where some choose to live'} 
+              />
             </MapView>
             :<View></View>
           
