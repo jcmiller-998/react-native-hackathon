@@ -33,7 +33,7 @@ const Home = ({ navigation }) => {
                     <Button
                         style = {styles.loginButton}
                         onPress={() => {
-                            navigation.navigate('CreateAccount' 
+                            navigation.navigate('UserLogin' 
                             )
                         }}
                         >
