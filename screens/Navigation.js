@@ -8,14 +8,14 @@ const Navigation = () => {
 }
 
 Navigation.navigationOptions = {
-    headerTitle: 'NIKE COMMUTE',
+    headerTitle: 'NIKEPOOL',
     headerStyle: {
         backgroundColor: "#F5F5F5"
     },
     headerTitleStyle: {
         fontFamily: "Futura-CondensedExtraBold", 
         fontSize: 24,
-        fontWeight: 800
+        fontWeight: "800"
     }
 };
 

@@ -64,7 +64,7 @@ const Home = ({ navigation }) => {
                         style={styles.button}
                         onPress={() => {
                             navigation.navigate('Navigation', {
-                                id: ' '
+                                id: '123'
                             })
                         }}
                     >
