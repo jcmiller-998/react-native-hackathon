@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
         width: "40%"
     },
     loginButton: {
+        marginTop: 10,
         justifyContent: "center",
         marginBottom: 24,
         backgroundColor: "#FA5400",

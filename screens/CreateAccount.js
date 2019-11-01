@@ -8,32 +8,45 @@ import swooshImage from "../assets/swoosh.png";
 const Login = ({ navigation }) => {
 
 
-      return (
-          <ScrollView style={styles.loginBackground}>
-            <Image style = {styles.swooshIcon} source={swooshImage} />
-              <Text 
-                  style={styles.LoginText}>
-                  Jump Into the NikePool
-              </Text>
-              <TextInput 
-              placeholder= 'Username'
-              style = {styles.username} 
-                 />
-              <TextInput placeholder='Password'
-              style = {styles.password} />
-              <View style={{margin:7}} />
-              <Button 
-                      style={styles.submitButton}
-                        onPress={() => {
-                          navigation.navigate('Home')
-                      }}
-                      >
-                      <Text style = {styles.submitText}>
-                      {`Submit`}
-                       </Text>
-                    </Button>
-                </ScrollView>
-          )
+  return (
+      <ScrollView style={styles.loginBackground}>
+        <Image style = {styles.swooshIcon} source={swooshImage} />
+          <Text 
+              style={styles.LoginText}>
+              JUMP INTO THE NIKEPOOL
+          </Text>
+          <TextInput 
+          placeholder= 'Username'
+          style = {styles.username} 
+              />
+          <TextInput placeholder='Password'
+          style = {styles.password} />
+          <View style={{margin:7}} />
+          <Button 
+                  style={styles.submitButton}
+                    onPress={() => {
+                      navigation.navigate('Home')
+                  }}
+                  >
+                  <Text style = {styles.submitText}>
+                  {`Submit`}
+                    </Text>
+                </Button>
+            </ScrollView>
+      )
+};
+
+Login.navigationOptions = {
+  headerTitle: 'NIKEPOOL',
+  headerStyle: {
+      backgroundColor: "#F5F5F5"
+  },
+  headerTitleStyle: {
+      fontFamily: "Futura-CondensedExtraBold", 
+      fontSize: 28,
+      fontWeight: "800",
+      letterSpacing: -1
+  }
 };
 
 const styles = StyleSheet.create({
