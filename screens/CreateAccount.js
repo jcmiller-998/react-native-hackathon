@@ -32,6 +32,16 @@ const Login = ({ navigation }) => {
                       {`Submit`}
                        </Text>
                     </Button>
+              <Button
+                  style={styles.registerButton}
+                  onPress={() => {
+                    navigation.navigate('Home')
+                }}
+                >
+                <Text style = {styles.registerText}>
+                      {`Don't have an Account? Sign up now`}
+                    </Text>  
+                </Button>
                 </ScrollView>
           )
 };
@@ -54,12 +64,15 @@ const styles = StyleSheet.create({
     padding: 20,
   }, 
   username: {  
+    marginTop: 20, 
+    marginBottom: 20, 
     textAlign: "center", 
     fontSize: 24
   }, 
   password: { 
     textAlign: "center", 
-    fontSize: 24
+    fontSize: 24, 
+    marginBottom: 20,
   },
   submitButton: { 
     justifyContent: "center",
@@ -69,6 +82,17 @@ const styles = StyleSheet.create({
   },
   submitText: { 
     color: "#ffffff", 
+    fontSize: 18, 
+    fontFamily: "Futura-CondensedExtraBold",
+  },
+  registerButton: { 
+    justifyContent: "center",
+    bottom: 50,
+    backgroundColor: "#FA5400",
+    width: "100%"
+  },
+  registerText: { 
+    color: "#000000", 
     fontSize: 18, 
     fontFamily: "Futura-CondensedExtraBold",
   },
