@@ -30,6 +30,18 @@ const Home = ({ navigation }) => {
             <Content padder>
                 <View style={styles.subHeader}>
                     <Image style={styles.swooshIcon} source={swooshImage} />
+                    <Button
+                        style = {styles.loginButton}
+                        onPress={() => {
+                            navigation.navigate('CreateAccount' 
+                            )
+                        }}
+                        >
+                        <Text style={styles.loginText}>
+                            {`Login`}
+                        </Text>
+                    </Button>
+
                 </View>
                 <Image style={styles.transportPhoto} source={nikeTransport} />
                 <View style={styles.container}>
@@ -77,7 +89,7 @@ const Home = ({ navigation }) => {
                         {`JOIN THE MISSION \n RIDE TOGETHER`}
                     </Text>
                     <Text style={styles.hashTag}>
-                        {`#GoToZero`}
+                        {`#MoveToZero`}
                     </Text>
                 </View>                  
             </Content>
@@ -93,7 +105,7 @@ Home.navigationOptions = {
     headerTitleStyle: {
         fontFamily: "Futura-CondensedExtraBold", 
         fontSize: 28,
-        fontWeight: 800,
+        fontWeight: "800",
         letterSpacing: -1
     }
 };
@@ -137,6 +149,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#FA5400",
         width: "40%"
     },
+    loginButton: {
+        justifyContent: "center",
+        marginBottom: 24,
+        backgroundColor: "#FA5400",
+        width: "18%"
+    },
     subHeader: {
         flexDirection: "row",
         justifyContent: "space-between",
@@ -146,7 +164,7 @@ const styles = StyleSheet.create({
         fontFamily: "Futura-CondensedExtraBold",
         textAlign: "center",
         letterSpacing: -1,
-        fontWeight: 800
+        fontWeight: "800"
     },
     hashTag: {
         fontSize: 36,
@@ -154,12 +172,17 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#FA5400",
         letterSpacing: -1,
-        fontWeight: 800
+        fontWeight: "800"
     },
     buttonText: {
         color: "#111",
         fontFamily: "Helvetica Neue",
         fontSize: 18
+    },
+    loginText: { 
+        color: "#111",
+        fontFamily: "Helvetica Neue",
+        fontSize: 14
     },
     message: {
         marginTop: 30,
