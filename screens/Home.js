@@ -66,13 +66,15 @@ const Home = ({ navigation }) => {
                             {`Request a ride`}
                         </Text>
                     </Button>
-                </View>       
-                <Text style={styles.callToAction}>
-                    {`JOIN THE MISSION \n RIDE TOGETHER`}
-                </Text>
-                <Text style={styles.hashTag}>
-                    {`#GoToZero`}
-                </Text>                  
+                </View>
+                <View style={styles.message}> 
+                    <Text style={styles.callToAction}>
+                        {`JOIN THE MISSION \n RIDE TOGETHER`}
+                    </Text>
+                    <Text style={styles.hashTag}>
+                        {`#GoToZero`}
+                    </Text>
+                </View>                  
             </Content>
         </Container>
     );
@@ -86,7 +88,8 @@ Home.navigationOptions = {
     headerTitleStyle: {
         fontFamily: "Futura-CondensedExtraBold", 
         fontSize: 24,
-        fontWeight: 800
+        fontWeight: 800,
+        letterSpacing: -1
     }
 };
 
@@ -134,21 +137,29 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     callToAction: {
-        marginTop: 50,
         fontSize: 24,
         fontFamily: "Futura-CondensedExtraBold",
         textAlign: "center",
+        letterSpacing: -1,
+        fontWeight: 800
     },
     hashTag: {
         fontSize: 36,
         fontFamily: "Futura-CondensedExtraBold",
         textAlign: "center",
-        color: "#FA5400"
+        color: "#FA5400",
+        letterSpacing: -1,
+        fontWeight: 800
     },
     buttonText: {
         color: "#111",
         fontFamily: "Helvetica Neue",
         fontSize: 18
+    },
+    message: {
+        marginTop: 30,
+        padding: 30,
+        backgroundColor: "#F5F5F5"
     }
 });
 
