@@ -77,7 +77,7 @@ const Home = ({ navigation }) => {
                         {`JOIN THE MISSION \n RIDE TOGETHER`}
                     </Text>
                     <Text style={styles.hashTag}>
-                        {`#GoToZero`}
+                        {`#MoveToZero`}
                     </Text>
                 </View>                  
             </Content>
