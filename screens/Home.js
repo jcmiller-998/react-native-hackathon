@@ -51,7 +51,9 @@ const Home = ({ navigation }) => {
                     <Button
                         style={styles.button}
                         onPress={() => {
-                            navigation.navigate('Navigation')
+                            navigation.navigate('Navigation', {
+                                id: ' '
+                            })
                         }}
                     >
                         <Text style={styles.buttonText}>

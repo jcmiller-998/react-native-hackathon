@@ -4,7 +4,7 @@ import NikePoolUsers from "../components/NikePoolUsers";
 
 const UserLogin = ({ navigation }) => (
     <View>
-        <NikePoolUsers />
+        <NikePoolUsers navigation={navigation} />
     </View>
 );
 
