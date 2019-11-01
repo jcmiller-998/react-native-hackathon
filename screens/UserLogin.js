@@ -43,7 +43,7 @@ const UserLogin = ({ navigation }) => {
       )
 };
 
-Login.navigationOptions = {
+UserLogin.navigationOptions = {
   headerTitle: 'NIKEPOOL',
   headerStyle: {
       backgroundColor: "#F5F5F5"
