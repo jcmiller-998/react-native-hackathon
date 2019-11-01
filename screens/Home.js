@@ -6,7 +6,7 @@ import nikeTransport from "../assets/nikeTransportation.png"
 
 const Home = ({ navigation }) => {
 
-    const [inputValue, setInputValue] = useState("Enter Your Location...");
+    const [inputValue, setInputValue] = useState("Enter Your Destination...");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     // const alert = () => {
@@ -81,7 +81,7 @@ const Home = ({ navigation }) => {
                         style={styles.button}
                         // onPress={alert}
                         onPress={() => {
-                            navigation.navigate('UserLogin')
+                            navigation.navigate('Navigation')
                         }}
                     >
                         <Text style={styles.buttonText}>
