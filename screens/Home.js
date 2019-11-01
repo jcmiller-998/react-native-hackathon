@@ -7,41 +7,46 @@ import nikeTransport from "../assets/nikeTransportation.png"
 const Home = ({ navigation }) => {
 
     const [inputValue, setInputValue] = useState("Enter Your Location...");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const alert = () => {
-        Alert.alert(
-            'ALERT!!!',
-            'This alert does nothing',
-            [
-                {
-                    text: 'OK',
-                    onPress: () => console.log('user hit ok'),
-                },
-                {
-                    text: 'Cancel',
-                    onPress: () => console.log('user hit cancel'),
-                }
-            ]
-        )
-    }
+    // const alert = () => {
+    //     Alert.alert(
+    //         'ALERT!!!',
+    //         'This alert does nothing',
+    //         [
+    //             {
+    //                 text: 'OK',
+    //                 onPress: () => console.log('user hit ok'),
+    //             },
+    //             {
+    //                 text: 'Cancel',
+    //                 onPress: () => console.log('user hit cancel'),
+    //             }
+    //         ]
+    //     )
+    // }
 
     return (
         <Container>
             <Content padder>
                 <View style={styles.subHeader}>
                     <Image style={styles.swooshIcon} source={swooshImage} />
-                    <Button
-                        style = {styles.loginButton}
-                        onPress={() => {
-                            navigation.navigate('UserLogin' 
-                            )
-                        }}
-                        >
-                        <Text style={styles.loginText}>
-                            {`Login`}
-                        </Text>
-                    </Button>
-
+                    {
+                        !isLoggedIn ?
+                            <Button
+                                style = {styles.loginButton}
+                                onPress={() => {
+                                    navigation.navigate('UserLogin', {
+                                        setIsLoggedIn: setIsLoggedIn
+                                    })
+                                }}
+                            >
+                                <Text style={styles.loginText}>
+                                    {`Login`}
+                                </Text>
+                            </Button>
+                        : <Text></Text>
+                    }
                 </View>
                 <Image style={styles.transportPhoto} source={nikeTransport} />
                 <View style={styles.container}>

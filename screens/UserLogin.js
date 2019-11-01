@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ScrollView, Text, StyleSheet, View, TextInput, Image } from 'react-native';
 import {Button} from "native-base";
 import swooshImage from "../assets/swoosh.png";
+import VerifyLogin from '../dbInteractions/verifyLogin';
 
 const UserLogin = ({ navigation }) => {
+  const [userName, setUserName] = useState("");
 
+  const checkUser = () => {
+    <VerifyLogin userName={userName} />
+    navigation.state.params.setIsLoggedIn(true);
+  }
+
+  useEffect(() => {
+    checkUser();
+  }, [userName])
+  
   return (
       <ScrollView style={styles.loginBackground}>
         <Image style = {styles.swooshIcon} source={swooshImage} />
@@ -12,7 +23,8 @@ const UserLogin = ({ navigation }) => {
               style={styles.LoginText}>
               JUMP INTO THE NIKEPOOL
           </Text>
-          <TextInput 
+          <TextInput
+          onChangeText={userName => setUserName(userName)} 
           placeholder= 'Username'
           style = {styles.username} 
               />
@@ -22,6 +34,7 @@ const UserLogin = ({ navigation }) => {
           <Button 
                   style={styles.submitButton}
                     onPress={() => {
+                      checkUser()
                       navigation.navigate('Home')
                   }}
                   >
