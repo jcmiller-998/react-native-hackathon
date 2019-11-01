@@ -52,7 +52,7 @@ const Home = ({ navigation }) => {
                         style={styles.button}
                         onPress={() => {
                             navigation.navigate('Navigation', {
-                                id: ' '
+                                id: '123'
                             })
                         }}
                     >
@@ -93,7 +93,7 @@ Home.navigationOptions = {
     headerTitleStyle: {
         fontFamily: "Futura-CondensedExtraBold", 
         fontSize: 28,
-        fontWeight: 800,
+        fontWeight: "800",
         letterSpacing: -1
     }
 };
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
         fontFamily: "Futura-CondensedExtraBold",
         textAlign: "center",
         letterSpacing: -1,
-        fontWeight: 800
+        fontWeight: "800"
     },
     hashTag: {
         fontSize: 36,
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#FA5400",
         letterSpacing: -1,
-        fontWeight: 800
+        fontWeight: "800"
     },
     buttonText: {
         color: "#111",

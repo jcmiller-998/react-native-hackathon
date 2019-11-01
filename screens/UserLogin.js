@@ -16,7 +16,7 @@ UserLogin.navigationOptions = {
     headerTitleStyle: {
         fontFamily: "Futura-CondensedExtraBold", 
         fontSize: 28,
-        fontWeight: 800,
+        fontWeight: "800",
         letterSpacing: -1
     }
 };
