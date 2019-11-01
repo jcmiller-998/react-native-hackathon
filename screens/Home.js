@@ -60,7 +60,10 @@ const Home = ({ navigation }) => {
                     </Button>
                     <Button
                         style={styles.button}
-                        onPress={alert}
+                        // onPress={alert}
+                        onPress={() => {
+                            navigation.navigate('UserLogin')
+                        }}
                     >
                         <Text style={styles.buttonText}>
                             {`Request a ride`}
@@ -81,13 +84,13 @@ const Home = ({ navigation }) => {
 }
 
 Home.navigationOptions = {
-    headerTitle: 'NIKE COMMUTE',
+    headerTitle: 'NIKEPOOL',
     headerStyle: {
         backgroundColor: "#F5F5F5"
     },
     headerTitleStyle: {
         fontFamily: "Futura-CondensedExtraBold", 
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 800,
         letterSpacing: -1
     }

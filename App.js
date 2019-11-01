@@ -1,10 +1,19 @@
 import React, { useState } from "react";
-import Home from "./screens/Home";
+import { ApolloClient } from 'apollo-client';
+import { ApolloProvider } from "react-apollo";
+import { HttpLink } from "apollo-link-http";
+import { InMemoryCache } from "apollo-cache-inmemory";
 import AppNavigation from "./navigation/AppNavigation";
-import { StyleSheet } from "react-native";
 import { AppLoading } from 'expo';
 import * as Font from "expo-font";
 import { Ionicons } from '@expo/vector-icons';
+
+const client = new ApolloClient({
+    link: new HttpLink({
+        uri: "https://api.graph.cool/simple/v1/ck2frcvhs3q4f0132sedczqm8"
+    }),
+    cache: new InMemoryCache()
+});
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +35,11 @@ const App = () => {
         )
     }
 
-    return <AppNavigation />
+    return (
+        <ApolloProvider client={client}>
+            <AppNavigation />
+        </ApolloProvider>
+    )
 }
 
 export default App;
